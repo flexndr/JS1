@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arg1 = +prompt("введи первое число");
+    let operation = prompt("какую операцию выполняем +-* /");
+    let arg2 = +prompt("введи второе число");
+    let result;
+
+    function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+            case "+":
+                return arg1 + arg2;
+            case "-":
+                return arg1 - arg2;
+            case "*":
+                return arg1 * arg2;
+            case "/":
+                return arg1 / arg2;
+            default:
+                document.write("было введено некорректное значение математической операции");
+        }
+    }
+
+    result = mathOperation(arg1, arg2, operation);
+    document.write(result);
+
+
+</script>
+</body>
+</html>
