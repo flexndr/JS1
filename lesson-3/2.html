@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let basket = [
+        {
+            title: "товар 1",
+            price: 100,
+            count: 2
+        },
+        {
+            title: "товар 2",
+            price: 300,
+            count: 3
+        },
+        {
+            title: "товар 3",
+            price: 150,
+            count: 1
+        }
+    ];
+    let summary = 0;
+    for (let item of basket) summary += item.price * item.count;
+    document.write("стоимость всех товаров в корзине:", summary)
+</script>
+</body>
+</html>
