@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let basket = [];
+    for (let i = 0; i < 10; i++) {
+        let item = "товар " + (i + 1);
+        let price = Math.round(Math.random() * 1000);
+        let count = +prompt(item + " ценой " + price + " сколько добавить в корзину?");
+        basket.push({item: item, price: price, count: count});
+    }
+    console.log(basket);
+
+    function countBasketPrice(basket) {
+        let summary = 0;
+        for (let item of basket) summary += item.price * item.count;
+        return summary;
+    }
+
+    alert("Стоимость корзины составила: " + countBasketPrice(basket));
+</script>
+</body>
+</html>
