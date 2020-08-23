@@ -1,10 +1,17 @@
 var event, ok;
 var answers = [];
+let answer = {};
+
 
 
 do {//Выводим первый вопрос
     ok = false;
     event = +prompt(works.a00 + works.a1 + works.a2 + '-1 - Выход из игры');
+    answer.question = works.a00;
+    answer.answer1 = works.a1;
+    answer.answer2 = works.a2;
+    answer.result = event;
+    answers.push(answer);
 
     if (event == -1) {
         break;
@@ -17,6 +24,11 @@ switch (event) {
         do {
             ok = false;
             event = +prompt(works.b00 + works.b1 + works.b2 + '-1 - Выход из игры');
+            answer.question = works.b00;
+            answer.answer1 = works.b1;
+            answer.answer2 = works.b2;
+            answer.result = event;
+            answers.push(answer);
             if (event == -1) {
                 break;
             } else {
@@ -28,6 +40,11 @@ switch (event) {
                 do {
                     ok = false;
                     event = +prompt(works.d00 + works.d1 + works.d2 + '-1 - Выход из игры');
+                    answer.question = works.d00;
+                    answer.answer1 = works.d1;
+                    answer.answer2 = works.d2;
+                    answer.result = event;
+                    answers.push(answer);
                     if (event == -1) {
                         break;
                     } else {
@@ -40,6 +57,11 @@ switch (event) {
                 do {
                     ok = false;
                     event = +prompt(works.d00 + works.d1 + works.d2 + '-1 - Выход из игры');
+                    answer.question = works.d00;
+                    answer.answer1 = works.d1;
+                    answer.answer2 = works.d2;
+                    answer.result = event;
+                    answers.push(answer);
                     if (event == -1) {
                         break;
                     } else {
@@ -58,6 +80,11 @@ switch (event) {
         do {
             ok = false;
             event = +prompt(works.c00 + works.c1 + works.c2 + '-1 - Выход из игры');
+            answer.question = works.c00;
+            answer.answer1 = works.c1;
+            answer.answer2 = works.c2;
+            answer.result = event;
+            answers.push(answer);
             if (event == -1) {
                 break;
             } else {
@@ -69,6 +96,11 @@ switch (event) {
                 do {
                     ok = false;
                     event = +prompt(works.d00 + works.d1 + works.d2 + '-1 - Выход из игры');
+                    answer.question = works.d00;
+                    answer.answer1 = works.d1;
+                    answer.answer2 = works.d2;
+                    answer.result = event;
+                    answers.push(answer);
                     if (event == -1) {
                         break;
                     } else {
@@ -81,6 +113,11 @@ switch (event) {
                 do {
                     ok = false;
                     event = +prompt(works.d00 + works.d1 + works.d2 + '-1 - Выход из игры');
+                    answer.question = works.d00;
+                    answer.answer1 = works.d1;
+                    answer.answer2 = works.d2;
+                    answer.result = event;
+                    answers.push(answer);
                     if (event == -1) {
                         break;
                     } else {
@@ -101,6 +138,8 @@ switch (event) {
         alert('Ошибка');
 }
 alert('Спасибо за игру');
+let temp=(answers[1]);
+console.log(temp.question+" "+temp.result);
 
 //------------------------------------------
 function isAnswer(q, event) {
