@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+</head>
+<body>
+<script>
+    a = prompt("введи число от 0 до 999");
+    function convert(a) {
+        if (a >= 0 && a <= 999) {
+            if (a < 10) {
+                a = "00" + a;
+            } else if (a < 100) {
+                a = "0" + a;
+            }
+            let mas = a.split('');
+            let result = {};
+            result.units = mas[2];
+            result.tens = mas[1];
+            result.hundreds = mas[0];
+            return (result);
+        } else console.log("введены неправильные данные");
+        return null;
+    }
+    console.log(convert(a));
+</script>
+</body>
+</html>
