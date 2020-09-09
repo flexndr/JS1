@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{margin:0 auto;justify-content:space-evenly;align-items:center;display:flex}
+        img{text-align:center;width:60%;}
+        button{height:25px}
+    </style>
+</head>
+<body>
+<div class="container">
+    <button id="-1" class="prev" onclick="f(id)">&#10096;</button>
+    <img src="big/1.jpg" id="slide" alt="picture">
+    <button id="1" class="next" onclick="f(id)">&#10097;</button>
+</div>
+<script>
+    let currentSlide = 1;
+    function f(id){
+        let path = document.getElementById("slide");
+        currentSlide +=(+id);
+        if (currentSlide > 3) {currentSlide = 1}
+        if (currentSlide < 1) {currentSlide = 3}
+        path.src = "big/" + currentSlide + ".jpg"
+    }
+
+</script>
+</body>
+</html>
