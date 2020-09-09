@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #basket{border:thin solid;padding:5px;margin:10px}
+        #goods{display:flex;justify-content:space-evenly}
+    </style>
+</head>
+<body>
+<section id="basket"></section>
+<section id="goods"></section>
+<script>
+    let goods = [{name:"букет1",imgSrc:"small/1.jpg",price:1000,amount:0},{name:"букет2",imgSrc:"small/2.jpg",price:2000,amount:0},{name:"букет3",imgSrc:"small/3.jpg",price:3000,amount:0}];
+    let basket = "Ваша корзина пуста", catalog = "";
+    function create() {
+        for (let i = 0; i < goods.length; i++) {
+            catalog += "<div><img alt='товар' src='" + goods[i].imgSrc + "'><br>" + goods[i].name + "<br>" + goods[i].price + "&#8381<br><button id='" + i + "' onclick='buy(id)'>в корзину</button></div>";
+        }
+        document.getElementById("goods").innerHTML = catalog;
+        document.getElementById("basket").innerHTML = basket;
+    }
+    function buy(id){
+        goods[id].amount++;
+        basket = "";
+        let sum = 0;
+        for (let i = 0; i < goods.length; i++) {
+            if (goods[i].amount !==0){
+                basket += goods[i].name + " - " + goods[i].amount + "шт. - " + goods[i].amount * goods[i].price + "<br>";
+                sum += goods[i].amount * goods[i].price;
+            }
+        }
+        basket += "<br>Стоимость корзины:" + sum +"&#8381";
+        document.getElementById("basket").innerHTML = basket;
+    }
+    window.onload = create;
+</script>
+</body>
+</html>
